@@ -40,7 +40,7 @@ void tud_mount_cb(void)
 
 	uint32_t flash_config = xbox_get_flash_config();
 
-	printf("flash_config: %x\n", flash_config);
+	printf("tud_mount_cb: flash_config: %x\n", flash_config);
 }
 
 // Invoked when device is unmounted
@@ -48,7 +48,7 @@ void tud_umount_cb(void)
 {
 	xbox_start_smc();
 
-	printf("Bye!\n");
+	printf("tud_umount_cb: Bye!\n");
 }
 
 // Invoked when usb bus is suspended
@@ -60,7 +60,7 @@ void tud_suspend_cb(bool remote_wakeup_en)
 
 	xbox_start_smc();
 
-	printf("Bye!\n");
+	printf("tud_suspend_cb: Bye!\n");
 }
 
 // Invoked when usb bus is resumed
@@ -70,7 +70,7 @@ void tud_resume_cb(void)
 
 	uint32_t flash_config = xbox_get_flash_config();
 
-	printf("flash_config: %x\n", flash_config);
+	printf("tud_resume_cb: flash_config: %x\n", flash_config);
 }
 
 void led_blink(void)
@@ -129,6 +129,7 @@ bool stream_emmc = false;
 bool do_stream = false;
 uint32_t stream_offset = 0;
 uint32_t stream_end = 0;
+uint32_t buffsize = 0;
 void stream()
 {
 	if (do_stream)
@@ -139,27 +140,37 @@ void stream()
 			return;
 		}
 
-		if (tud_cdc_write_available() < 4 + (stream_emmc ? 0x200 : 0x210))
+		buffsize = tud_cdc_write_available();
+		printf("CDC_TX buffer level: 0x%x\n", buffsize);
+		if (buffsize < 4 + (stream_emmc ? 0x200 : 0x210)){
+			printf("CDC_TX buffer is full\n", buffsize);
 			return;
+		}
 
 		if (!stream_emmc)
 		{
+			printf("stream_emc @ offset: 0x%x\n", stream_offset);
 			static uint8_t buffer[4 + 0x210];
 			uint32_t ret = xbox_nand_read_block(stream_offset, &buffer[4], &buffer[4 + 0x200]);
 			*(uint32_t *)buffer = ret;
 			if (ret == 0)
 			{
+				printf("xbox_nand_read_block sucess\n");
 				tud_cdc_write(buffer, sizeof(buffer));
+				printf("result sent to usb cdc_write\n");
 				++stream_offset;
 			}
 			else
 			{
+				printf("xbox_nand_read_block fail\n");
 				tud_cdc_write(&ret, 4);
+				printf("result sent to usb cdc_write\n");
 				do_stream = false;
 			}
 		}
 		else
 		{
+			printf("sd_readblocks %x\n", stream_offset);
 			static uint8_t buffer[4 + 0x200];
 			int ret = sd_readblocks_sync(&buffer[4], stream_offset, 1);
 			*(uint32_t *)buffer = ret;
@@ -202,6 +213,7 @@ void tud_cdc_rx_cb(uint8_t itf)
 		uint32_t count = tud_cdc_read(&cmd, sizeof(cmd));
 		if (count != sizeof(cmd))
 			return;
+		printf("got cmd: %x\n", cmd.cmd);
 
 		if (cmd.cmd == GET_VERSION)
 		{

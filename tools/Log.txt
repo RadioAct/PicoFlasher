@@ -1,0 +1,357 @@
+
+=========================================================================
+J-Runner with Extras
+Session: 02-24-2022 13:59:20
+Version: 3.1.1
+Status: Up to date
+
+WARNING - Working Folder!
+Your working folder is not empty, click Show Working Folder to view its contents
+
+Connection TimeOut
+
+=========================================================================
+J-Runner with Extras
+Session: 02-24-2022 16:46:28
+Version: 3.1.1
+Status: Up to date
+
+WARNING - Working Folder!
+Your working folder is not empty, click Show Working Folder to view its contents
+
+Console Not Found
+
+Cancelled
+
+
+=========================================================================
+J-Runner with Extras
+Session: 02-24-2022 16:47:30
+Version: 3.1.1
+Status: Up to date
+
+WARNING - Working Folder!
+Your working folder is not empty, click Show Working Folder to view its contents
+
+
+=========================================================================
+J-Runner with Extras
+Session: 02-25-2022 16:36:30
+Version: 3.1.1
+Status: Up to date
+
+WARNING - Working Folder!
+Your working folder is not empty, click Show Working Folder to view its contents
+
+
+=========================================================================
+J-Runner with Extras
+Session: 02-25-2022 16:38:13
+Version: 3.1.1
+Status: Up to date
+
+WARNING - Working Folder!
+Your working folder is not empty, click Show Working Folder to view its contents
+
+
+=========================================================================
+J-Runner with Extras
+Session: 02-25-2022 16:38:23
+Version: 3.1.1
+Status: Up to date
+
+WARNING - Working Folder!
+Your working folder is not empty, click Show Working Folder to view its contents
+
+
+=========================================================================
+J-Runner with Extras
+Session: 03-02-2022 17:05:32
+Version: 3.1.2
+Status: Up to date
+
+WARNING - Working Folder!
+Your working folder is not empty, click Show Working Folder to view its contents
+
+
+=========================================================================
+J-Runner with Extras
+Session: 03-02-2022 17:11:52
+Version: 3.1.2
+Status: Up to date
+
+WARNING - Working Folder!
+Your working folder is not empty, click Show Working Folder to view its contents
+
+Checking Console...
+0x00AA3020
+Jasper 512MB
+
+Checking Console...
+0x00AA3020
+Jasper 512MB
+
+Checking Console...
+0x00AA3020
+Jasper 512MB
+
+Checking Console...
+0x00AA3020
+Jasper 512MB
+
+
+=========================================================================
+J-Runner with Extras
+Session: 03-02-2022 17:15:00
+Version: 3.1.2
+Status: Up to date
+
+WARNING - Working Folder!
+Your working folder is not empty, click Show Working Folder to view its contents
+
+Checking Console...
+0x00AA3020
+Jasper 512MB
+
+Checking Console...
+0x00AA3020
+Jasper 512MB
+
+Checking Console...
+0x00AA3020
+Jasper 512MB
+
+
+=========================================================================
+J-Runner with Extras
+Session: 03-02-2022 17:27:15
+Version: 3.1.2
+Status: Up to date
+
+WARNING - Working Folder!
+Your working folder is not empty, click Show Working Folder to view its contents
+
+
+=========================================================================
+J-Runner with Extras
+Session: 03-02-2022 17:29:39
+Version: 3.1.2
+Status: Up to date
+
+WARNING - Working Folder!
+Your working folder is not empty, click Show Working Folder to view its contents
+
+
+=========================================================================
+J-Runner with Extras
+Session: 03-03-2022 12:22:00
+Version: 3.1.2
+Status: Up to date
+
+WARNING - Working Folder!
+Your working folder is not empty, click Show Working Folder to view its contents
+
+
+=========================================================================
+J-Runner with Extras
+Session: 03-03-2022 12:26:57
+Version: 3.1.2
+Status: Up to date
+
+WARNING - Working Folder!
+Your working folder is not empty, click Show Working Folder to view its contents
+
+Checking Console...
+0x00AA3020
+Jasper 512MB
+
+Reading Nand to D:\SW\PicoFlasher\tools\output\nanddump1.bin
+Error: 6DE02DAF
+
+Read Successful!
+
+Initializing nanddump1.bin, please wait...
+Nand Initialization Failed: System.ArgumentException
+The dump may be incomplete or corrupt
+
+Reading Nand to D:\SW\PicoFlasher\tools\output\nanddump2.bin
+Error: 50107557
+
+Read Successful!
+
+Comparing...
+Can't check for bad blocks. No Spare data. Possibly Corona 4GB
+
+=========================================================================
+J-Runner with Extras
+Session: 03-03-2022 12:32:55
+Version: 3.1.2
+Status: Up to date
+
+WARNING - Working Folder!
+Your working folder is not empty, click Show Working Folder to view its contents
+
+
+=========================================================================
+J-Runner with Extras
+Session: 03-03-2022 14:38:26
+Version: 3.1.2
+Status: Up to date
+
+WARNING - Working Folder!
+Your working folder is not empty, click Show Working Folder to view its contents
+
+Checking Console...
+0x00AA3020
+Jasper 512MB
+
+Checking Console...
+0x00AA3020
+Jasper 512MB
+
+Reading Nand to D:\SW\PicoFlasher\tools\output\nanddump1.bin
+
+=========================================================================
+J-Runner with Extras
+Session: 03-03-2022 15:16:06
+Version: 3.1.2
+Status: Up to date
+
+WARNING - Working Folder!
+Your working folder is not empty, click Show Working Folder to view its contents
+
+
+=========================================================================
+J-Runner with Extras
+Session: 03-03-2022 15:17:57
+Version: 3.1.2
+Status: Up to date
+
+WARNING - Working Folder!
+Your working folder is not empty, click Show Working Folder to view its contents
+
+Checking Console...
+0x00AA3020
+Jasper 512MB
+
+Checking Console...
+0x00AA3020
+Jasper 512MB
+
+Checking Console...
+0x00AA3020
+Jasper 512MB
+
+Reading Nand to D:\SW\PicoFlasher\tools\output\nanddump1.bin
+
+=========================================================================
+J-Runner with Extras
+Session: 03-03-2022 15:33:07
+Version: 3.1.2
+Status: Up to date
+
+WARNING - Working Folder!
+Your working folder is not empty, click Show Working Folder to view its contents
+
+
+=========================================================================
+J-Runner with Extras
+Session: 03-03-2022 15:51:51
+Version: 3.1.2
+Status: Up to date
+
+WARNING - Working Folder!
+Your working folder is not empty, click Show Working Folder to view its contents
+
+Checking Console...
+0x00AA3020
+Jasper 512MB
+
+Checking Console...
+0x00AA3020
+Jasper 512MB
+
+
+=========================================================================
+J-Runner with Extras
+Session: 03-03-2022 15:57:16
+Version: 3.1.2
+Status: Up to date
+
+WARNING - Working Folder!
+Your working folder is not empty, click Show Working Folder to view its contents
+
+
+=========================================================================
+J-Runner with Extras
+Session: 03-04-2022 8:50:17
+Version: 3.1.2
+Status: Up to date
+
+WARNING - Working Folder!
+Your working folder is not empty, click Show Working Folder to view its contents
+
+Checking Console...
+0x00AA3020
+Jasper 512MB
+
+
+=========================================================================
+J-Runner with Extras
+Session: 03-04-2022 8:53:19
+Version: 3.1.2
+Status: Up to date
+
+WARNING - Working Folder!
+Your working folder is not empty, click Show Working Folder to view its contents
+
+Checking Console...
+0x00AA3020
+Jasper 512MB
+
+Checking Console...
+0x00AA3020
+Jasper 512MB
+
+Checking Console...
+0x00AA3020
+Jasper 512MB
+
+Checking Console...
+0x00AA3020
+Jasper 512MB
+
+Checking Console...
+0x00AA3020
+Jasper 512MB
+
+
+=========================================================================
+J-Runner with Extras
+Session: 03-04-2022 9:31:51
+Version: 3.1.2
+Status: Up to date
+
+WARNING - Working Folder!
+Your working folder is not empty, click Show Working Folder to view its contents
+
+Checking Console...
+0x00AA3020
+Jasper 512MB
+
+Cancelled
+
+
+=========================================================================
+J-Runner with Extras
+Session: 03-04-2022 9:54:26
+Version: 3.1.2
+Status: Up to date
+
+WARNING - Working Folder!
+Your working folder is not empty, click Show Working Folder to view its contents
+
+Checking Console...
+0x00AA3020
+Jasper 512MB
+

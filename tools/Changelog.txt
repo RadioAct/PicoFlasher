@@ -1,0 +1,221 @@
+J-Runner with Extras Changelog
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+V3.1.2:
+- Added: Support for PicoFlasher eMMC
+- Fixed: Donor Nand Creator invalid state issue
+- Fixed: Progress bar bug
+- Fixed: Some devices didn't reload nand into source after ECC write
+- Fixed: JR-Programmer ISD programming bugs
+- Fixed: Various bugs and usability issues
+- Fixed: Scheduling issues causing crashes on some systems
+- Changed: Standardized device console messages
+- Changed: Standardized device behavior in read/write
+
+V3.1.1:
+- Added: Support for PicoFlasher
+- Added: Updserv v3
+- Added: Ability to create RGH3 XDKbuild images
+- Fixed: Various bugs and usability issues
+- Changed: NandPro version for Corona
+
+V3.1.0c:
+- Added: Ability to save Fuses.txt to Working Folder or Desktop
+- Added: Support for Trinity BB (XDK)
+- Added: Improved GUI
+- Fixed: Various application back-end issues
+- Fixed: Switching Console ID display mode causing an exception if no nand loaded
+- Fixed: UI bug with bigffs
+- Fixed: Bugs with CPU Key Database search function
+- Fixed: IP Scanner left in invalid state after finding console
+- Fixed: Various bugs and usability issues
+
+V3.1.0b:
+- Added: File drag and drop for Donor Nand Creator and KV Decrypter
+- Added: Custom SMC Config selection in Donor Nand Creator
+- Fixed: Patches not being reset properly
+- Fixed: Invalid state causing Donor Nand Creator to not recognize console type
+- Fixed: New XeLL not launching ELF files correctly
+- Fixed: Post V3.1.0 release bugs
+
+V3.1.0:
+- Added: Improved functionality and speed of updater
+- Added: Improved GUI
+- Added: Refinements to Nand Info/KV Info panels
+- Added: Ability to end the session and start a new one
+- Added: RGH1.2 V2 timings for Slims
+- Added: Donor Nand Creation and KV Decrypter tools
+- Added: RGH3 ECC and Freeboot build support
+- Added: Better drivers for NAND-X and JRP
+- Added: Improved XeLL Reloaded, built with the newest fixes
+- Added: Better MTX USB Firmware Utility
+- Added: Friendly console ID decoding in Nand Info
+- Added: xFlasher support for Start Block and Length parameters
+- Added: Improved LibUsb implementation
+- Fixed: Buggy and broken behavior of IP configuration
+- Fixed: Nand not being correctly initialized before CPU Key retrieval
+- Fixed: Improved behavior when setting working directory
+- Fixed: JTAG XeLL creation issue
+- Fixed: Device detection issue
+- Fixed: Update JRP firmware not prompting for hex if nand loaded
+- Fixed: eMMC read ignoring iterations selected if opened from Advanced menu
+- Fixed: Tray icon being left in system tray occaisionally
+- Fixed: Various bugs and usability issues
+- Changed: Reworked MTX USB Mode
+- Changed: The program now checks for updates and starts much faster
+- Changed: Improved spawn location of subforms
+- Changed: Replaced annoying balloon on startup with taskbar icon
+
+V3.0.3b:
+- Added: Default dash selection to 17559 if no saved dash is present
+- Fixed: Loop between dialogs and installer if Visual C++ Redistributable is cancelled or fails
+- Fixed: Repeated clicking not ignored while xFlasher is initializing causing application to crash
+- Fixed: Issue causing Extract Files to cause a crash after files are moved to serial folder
+- Changed: XDKbuild check box behavior
+
+V3.0.3:
+- Added: Inhibit errors while the xFlasher initializes and queue commands until its ready
+- Added: SMC+ 1.1 ECCs
+- Added: Corona ECCs fixed for RGH1.2 all configurations
+- Added: Option to minimize application into tray icon
+- Fixed: xFlasher not releasing file when read/write is aborted
+- Fixed: xFlasher abort during writing did not display "Aborted"
+- Fixed: Crashing after 4GB reading on some systems due to too many simultaneous operations
+- Fixed: OS detection bug
+- Fixed: NAND not reloaded after patching KV
+- Fixed: Erroneous creation of empty "Logs" directory
+- Fixed: Keygen false positive detection on some antivirus software
+- Fixed: Issue with minimize/restore
+- Fixed: Various bugs and usability issues
+- Changed: Patching SMC Config is now seamless, no need to reload file
+- Changed: Zephyr Glitch2 now build ECCs and XeBuild as Falcon, no more need to manually change
+- Changed: Xenon Glitch2 now builds XeBuild as Falcon, no more need to manually change
+- Changed: Winbond 2K options are now on the main XeBuild tab
+
+V3.0.2b:
+- Added: xFlasher support for Xilinx XC2C64A-VQ100 for Matrix "Super-Big-IC"
+- Added: Better grabbing of CPLD type for xFlasher
+- Added: Ability to abort xFlasher SPI read/write via Esc key
+- Fixed: Incorrect display of xFlasher initializing
+- Fixed: Post-release bugs with xFlasher implementation
+- Fixed: 32-bit xFlasher dependancy detection
+- Fixed: Crashing issue with xFlasher and some antivirus software
+- Fixed: Various bugs and usability issues
+
+V3.0.2:
+- Added: Totally redone xFlasher integration with custom SPI DLL
+- Added: xFlasher now shows blocks during read/write and proper progress
+- Added: xFlasher alerts user when trying to write a eMMC image in SPI mode
+- Added: xFlasher alerts user when trying to program a timing in eMMC mode
+- Added: Clean SMC building option for Retail and DEVGL
+- Added: Support for the final xFlasher product
+- Added: Support for XDKbuild
+- Added: Improved updater
+- Added: Automatic detection of xFlasher dependencies
+- Fixed: Invalid hack types not greyed out after setting board type
+- Fixed: Zephyr timing info
+- Fixed: Buggy and bad handling of Winbond 2K radio buttons
+- Fixed: Various bugs and usability issues
+- Changed: Updater now shows download progress
+- Changed: Fixed dashlaunch XeBuild settings
+
+V3.0.1:
+- Added: XeBuild and Dashlaunch version info
+- Added: F3 and F4 shortcut keys to open Program Timing File and Custom Nand Args
+- Added: Updater now shows changelog
+- Added: xFlasher can now handle Xenon/Zephyr/Falcon 64MB (Devkit) NANDs
+- Added: 0 Fuse DEVGL building options
+- Fixed: Cannot write ECCs via Custom Nand Args with xFlasher
+- Fixed: Glitch ECC made on 14699 and older NAND even if Glitch2 is selected
+- Fixed: Various bugs and usability issues
+- Fixed: Buggy and bad handling of hack type radio buttons
+- Fixed: Zephyr radio buttons didn't properly deselect other timing groups
+- Fixed: Patching or extracting NANDs doesn't save to working folder
+- Fixed: Name of XC2C64A showing as XC2C64
+- Changed: Creating NAND from scratch does not require an SMC.bin if using Glitch2 CR4 or SMC+ SMCs
+- Changed: Made xFlasher detect motherboards faster
+- Changed: Huge improvements to COM Port Monitor
+- Changed: Cleanup some UI elements
+- Changed: Updates to some included timing files
+
+V3.0.0d:
+- Added: xFlasher support for Xilinx XC2C64A-FG48 for Matrix "Small-IC"
+- Added: xFlasher can now detect and check flash configs and motherboards
+- Added: xFlasher automatic board type detection on reading/writing
+- Added: Query console button works with xFlasher now
+- Fixed: Cannot write JTAG XeLL bins with xFlasher
+- Fixed: Bug with timing programming of Zephyr timings
+- Fixed: Various bugs and usability issues
+- Fixed: Scan IP for console bug
+- Changed: Tweaks to included timing files
+
+V3.0.0c:
+- Added: SMC+ 1.1: CR4 slowdown instructions added
+- Fixed: Various bugs and usability issues
+- Changed: Improved xFlasher Glitch Chip detection
+
+V3.0.0b:
+- Added: 6717 Retail generation
+- Fixed: Bug in xFlasher implementation
+- Fixed: Bugs in UI
+- Changed: Timing Assistant Jasper updated
+
+V3.0.0:
+- Added: Update check and auto update
+- Added: Native xFlasher support (for xFlasher and others)
+- Added: SVF programming with xFlasher
+- Added: New RGH2 timings for Zephyr
+- Fixed: DemoN never sets progress to 100%
+- Fixed: No chime on 4GB
+- Fixed: Various bugs and usability issues
+- Fixed: Scan IP for console
+
+V2.9.7:
+- Added: Add Matrix Flasher reprogramming
+- Fixed: Various bugs and usability issues
+
+V2.9.6c:
+- Added: Newest Corona S-RGH timing files
+- Improved: Timing Assistant
+
+V2.9.6b:
+- Fixed: JTAG SMC copy bug
+
+V2.9.6:
+- Added: DEVGL Build Support
+- Added: Bigffs Build Support
+- Fixed: Various bugs and usability issues
+- Changed: Updated GUI for cleaner layout of controls
+- Changed: Totally redone Timing Assistant
+
+V2.9.5:
+- Added: Matrix Flasher Mode to support the MTX USB NAND Flasher
+- Added: XSVF support for Matrix Flasher
+- Added: New dualnand timings to Program Glitch Chip menu
+- Fixed: Matrix Flasher can't write
+- Fixed: Various bugs and usability issues
+
+V2.9.4:
+- Added: SMC+ SMCs
+- Added: Preperations for better Matrix Flasher Support
+- Added: Ability to disable DiscordRPC
+- Fixed: J-Runner now cleans up SMCs it automatically places in
+- Fixed: Various bugs and usability issues
+
+V2.9.3:
+- Added: DiscordRPC
+- Added: Completely new Program Glitch Chip menu
+- Fixed: Various bugs and usability issues
+- Changed: Cleaned up legacy code
+
+V2.9.2:
+- Fixed: Various bugs and usability issues
+
+V2.9.1:
+- Added: 6717 and 9199 Dash Support
+- Fixed: Various bugs and usability issues
+
+V2.9.0:
+- Added: Timing Assistant
+- Fixed: Various bugs and usability issues

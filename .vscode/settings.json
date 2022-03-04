@@ -9,5 +9,24 @@
 		"stdlib.h": "c",
 		"pio_spi.h": "c",
 		"spi.h": "c"
-	}
+	},
+
+	"cmake.statusbar.advanced": {
+        "debug": {
+            "visibility": "hidden"
+        },
+        "launch": {
+            "visibility": "hidden"
+        },
+        "build": {
+            "visibility": "default"
+        },
+        "buildTarget": {
+            "visibility": "hidden"
+        }
+    },
+    "cmake.buildBeforeRun": true,
+    "C_Cpp.default.configurationProvider": "ms-vscode.cmake-tools",
+    "cortex-debug.openocdPath": "C:/msys64/home/tyler.hopaluk/openocd/src/openocd.exe"
+
 }

@@ -14,6 +14,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+#include <stdio.h>
 #include "pico/stdlib.h"
 #include "pins.h"
 #include "spiex.h"
@@ -93,6 +94,7 @@ int xbox_nand_wait_ready(uint16_t timeout)
 	do
 	{
 		if (!(xbox_nand_get_status() & 0x01))
+			printf("xbox_nand not ready");
 			return 0;
 	} while (timeout--);
 
@@ -101,17 +103,15 @@ int xbox_nand_wait_ready(uint16_t timeout)
 
 int xbox_nand_read_block(uint32_t lba, uint8_t *buffer, uint8_t *spare)
 {
+	//printf("xbox_nand_read_block %x\n", lba);
 	xbox_nand_clear_status();
-
 	spiex_write_reg(0x0C, lba << 9);
-
 	spiex_write_reg(0x08, 0x03);
-
+	
 	if (xbox_nand_wait_ready(0x1000))
 		return 0x8000 | xbox_nand_get_status();
-
+	
 	spiex_write_reg(0x0C, 0);
-
 	uint8_t *end = buffer + 0x200;
 	while (buffer < end)
 	{
@@ -129,7 +129,6 @@ int xbox_nand_read_block(uint32_t lba, uint8_t *buffer, uint8_t *spare)
 		*(uint32_t *)spare = spiex_read_reg(0x10);
 		spare += 4;
 	}
-
 	return 0;
 }
 
