@@ -1,2 +1,3 @@
 build/*
 !build/PicoFlasher.uf2
+!build/PicoFlasher.hex
