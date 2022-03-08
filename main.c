@@ -141,36 +141,36 @@ void stream()
 		}
 
 		buffsize = tud_cdc_write_available();
-		printf("CDC_TX buffer level: 0x%x\n", buffsize);
+		//printf("CDC_TX buffer level: 0x%x\n", buffsize);
 		if (buffsize < 4 + (stream_emmc ? 0x200 : 0x210)){
-			printf("CDC_TX buffer is full\n", buffsize);
+			//printf("CDC_TX buffer is full\n", buffsize);
 			return;
 		}
 
 		if (!stream_emmc)
 		{
-			printf("stream_emc @ offset: 0x%x\n", stream_offset);
+			//printf("stream_emc @ offset: 0x%x\n", stream_offset);
 			static uint8_t buffer[4 + 0x210];
 			uint32_t ret = xbox_nand_read_block(stream_offset, &buffer[4], &buffer[4 + 0x200]);
 			*(uint32_t *)buffer = ret;
 			if (ret == 0)
 			{
-				printf("xbox_nand_read_block sucess\n");
+				//printf("xbox_nand_read_block sucess\n");
 				tud_cdc_write(buffer, sizeof(buffer));
-				printf("result sent to usb cdc_write\n");
+				//printf("result sent to usb cdc_write\n");
 				++stream_offset;
 			}
 			else
 			{
-				printf("xbox_nand_read_block fail\n");
+				printf("xbox_nand_read_block fail: %i\n", ret);
 				tud_cdc_write(&ret, 4);
-				printf("result sent to usb cdc_write\n");
+				//printf("result sent to usb cdc_write\n");
 				do_stream = false;
 			}
 		}
 		else
 		{
-			printf("sd_readblocks %x\n", stream_offset);
+			//printf("sd_readblocks %x\n", stream_offset);
 			static uint8_t buffer[4 + 0x200];
 			int ret = sd_readblocks_sync(&buffer[4], stream_offset, 1);
 			*(uint32_t *)buffer = ret;
@@ -213,7 +213,7 @@ void tud_cdc_rx_cb(uint8_t itf)
 		uint32_t count = tud_cdc_read(&cmd, sizeof(cmd));
 		if (count != sizeof(cmd))
 			return;
-		printf("got cmd: %x\n", cmd.cmd);
+		//printf("got cmd: %x\n", cmd.cmd);
 
 		if (cmd.cmd == GET_VERSION)
 		{
@@ -222,11 +222,14 @@ void tud_cdc_rx_cb(uint8_t itf)
 		}
 		else if (cmd.cmd == GET_FLASH_CONFIG)
 		{
+			printf("get flash config");
 			uint32_t fc = xbox_get_flash_config();
 			tud_cdc_write(&fc, 4);
+			printf(": %x\n", fc);
 		}
 		else if (cmd.cmd == READ_FLASH)
 		{
+			printf("read flash block 0x%x\n", cmd.lba);
 			uint8_t buffer[0x210];
 			uint32_t ret = xbox_nand_read_block(cmd.lba, buffer, &buffer[0x200]);
 			tud_cdc_write(&ret, 4);
@@ -235,6 +238,7 @@ void tud_cdc_rx_cb(uint8_t itf)
 		}
 		else if (cmd.cmd == WRITE_FLASH)
 		{
+			printf("write flash block 0x%x\n", cmd.lba);
 			uint8_t buffer[0x210];
 			uint32_t count = tud_cdc_read(&buffer, sizeof(buffer));
 			if (count != sizeof(buffer))
@@ -244,6 +248,7 @@ void tud_cdc_rx_cb(uint8_t itf)
 		}
 		else if (cmd.cmd == READ_FLASH_STREAM)
 		{
+			printf("stream_emc: 0x0 - 0x%x\n", cmd.lba);
 			stream_emmc = false;
 			do_stream = true;
 			stream_offset = 0;
@@ -398,11 +403,29 @@ int main(void)
 	xbox_init();
 
 	tusb_init();
-
+	static uint8_t buffer[4 + 0x210];
+	uint32_t buffsize = 0;
 	while (1)
 	{
 		tud_task();
 		stream();
+		/*
+		if (tud_cdc_connected() ==true){
+
+			
+			buffsize = tud_cdc_write_available();
+			printf("CDC_TX buffer level: 0x%x\n", buffsize);
+			if (buffsize < 4 + 0x210){
+				printf("CDC_TX buffer is full\n", buffsize);
+			}else{
+				tud_cdc_write(buffer, sizeof(buffer));
+				tud_cdc_write_flush();
+			}
+
+		}
+		*/
+
+		
 	}
 
 	return 0;
